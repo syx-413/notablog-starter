@@ -2,7 +2,7 @@ name: Github Pages
 
 on:
   schedule:
-    - cron: "0 06 * * *"
+    - cron: "0 6 * * 1" # 
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,6 @@ jobs:
           repository-name: syx-413/syx-413.github.io # 修改这里
           BRANCH: main  # 如果你的仓库默认分支是 master 记得修改这里                    
           FOLDER: public
-#       - name: Deploy 改动地方
-#         uses: JamesIves/github-pages-deploy-action@v4.4.0
+
 
 
