@@ -1,0 +1,23 @@
+name: Node.js Reference Test
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master 
+      - uses: actions/setup-node@master 
+      
+#             - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3.6.0
+
+        with:
+          node-version: "16"
+      - name: Generate the test blog
+        run: |
+          npm i -g notablog
+          notablog generate .
+        env:
+          CI: true
