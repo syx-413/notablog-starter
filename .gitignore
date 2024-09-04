@@ -25,3 +25,5 @@ TODO.md
 public/
 cache/
 *.log
+pakage-lock.json
+pakage.json
