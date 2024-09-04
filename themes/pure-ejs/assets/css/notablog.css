@@ -82,6 +82,7 @@ body { /* Body */
   max-width: 100%;
   margin: 0px auto;
   padding: 0px 96px; 
+  margin-right:10%;
 }
 
 /* For mobile devices */ /* 用于移动设备 */
@@ -92,6 +93,7 @@ body { /* Body */
     max-width: 87.5%;
     padding-left: 0px;
     padding-right: 0px;
+    /* margin-right: 25%; */
   }
 }
 
@@ -272,6 +274,7 @@ body { /* Body */
 .PageRoot { /* 页面根 */
   padding-bottom: 0;
   padding-top: 0;
+  /* margin-right:10%; */
 }
 
 /* Footer */
