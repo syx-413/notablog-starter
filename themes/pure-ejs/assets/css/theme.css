@@ -618,7 +618,7 @@ pre.Code code { /* 代码 */
 }
 
 .Heading--1 .SemanticString { /* 标题1的语义字符串 */
-  font-size: 2.0625rem;
+  font-size: 1.5rem;
   line-height: 1.515;
 }
 
@@ -627,7 +627,7 @@ pre.Code code { /* 代码 */
 }
 
 .Heading--2 .SemanticString { /* 标题2的语义字符串 */
-  font-size: 1.525rem;
+  font-size: 1.225rem;
   line-height: 1.538;
 }
 
@@ -994,14 +994,15 @@ pre.Code code { /* 代码 */
 .TableOfContents { /* 目录 */
   box-sizing: border-box;
   display: block;
-  border-left: 4px solid #66ccff;
+  border-left: 4px solid #66ccff7b;
   position: fixed;
-  top: 5em;
+  top: 55%;
   left: 0;
   margin: 4px 0;
   padding: 25px;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 0.875rem;
+  font-weight: bold;
   z-index: 1000; /* 确保它在其他元素之上 */
   max-height: 90vh; /* 设置最大高度 */
   overflow-y: auto; /* 当内容超出容器高度时，添加垂直滚动条 */
@@ -1030,10 +1031,26 @@ pre.Code code { /* 代码 */
   border-bottom: 1px solid rgba(55, 53, 47, 0.16);
 }
 
-.TableOfContents__Item > a.active {
-  font-weight: bold;
-  color: #66ccff;
+/* 自定义滚动条样式 */
+.TableOfContents::-webkit-scrollbar {
+  width: 8px; /* 滚动条宽度 */
 }
+
+.TableOfContents::-webkit-scrollbar-track {
+  background: #f0f0f0; /* 滚动条轨道背景色 */
+  border-radius: 5px; /* 滚动条轨道圆角 */
+}
+
+.TableOfContents::-webkit-scrollbar-thumb {
+  background: #66ccff; /* 滚动条滑块背景色 */
+  border-radius: 5px; /* 滚动条滑块圆角 */
+}
+
+.TableOfContents::-webkit-scrollbar-thumb:hover {
+  background: #3399cc; /* 滚动条滑块悬停背景色 */
+}
+
+
 
 /* Text */
 
