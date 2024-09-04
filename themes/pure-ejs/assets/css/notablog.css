@@ -78,7 +78,7 @@ body { /* Body */
 .PageRoot,
 .ArticleList { /* 头部，页面根，文章列表 */
   /* width: 900px; */
-  width: 945px;
+  width: 970px;
   max-width: 100%;
   margin: 0px auto;
   padding: 0px 96px; 
@@ -136,7 +136,7 @@ body { /* Body */
   margin-top: 1.5rem;
   margin-bottom: 0.25em;
   line-height: 1.2;
-  font-size: 2.625rem;
+  font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: -0.005em;
 }
