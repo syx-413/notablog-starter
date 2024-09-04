@@ -285,7 +285,7 @@ body { /* Body */
   align-items: center; /* 将页脚的子元素垂直居中 */
   justify-content: center; /* 将页脚的子元素水平居中 */
   font-size: 14px;
-  padding: 5rem 3rem;
+  padding: 1rem 3rem; /* 将页脚的内边距设置为1rem 3rem */
   color: rgba(55, 53, 47, 0.6);
 }
 
