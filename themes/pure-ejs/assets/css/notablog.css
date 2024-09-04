@@ -22,7 +22,7 @@ body { /* Body */
   left: 0; /* 将导航栏固定在屏幕上方 */
   z-index: 999; /* 将导航栏固定在屏幕上方 */
   width: 100%; /* 将导航栏的宽度设置为100% */
-  height: 50px; /* 将导航栏的高度设置为50px */
+  height: 55px; /* 将导航栏的高度设置为50px */
   padding: 10px 20px; /* 将导航栏的内边距设置为10px 20px */
   /* Background blur stuff. */ /* 背景模糊效果 */
   background-color: var(--bg-blur); /* 将导航栏的背景颜色设置为--bg-blur变量的值 */
@@ -146,7 +146,7 @@ body { /* Body */
 }
 
 .Header__DescBigQuoteMark { /* 头部的大引号 */
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 0;
 }
 
