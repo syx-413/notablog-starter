@@ -176,7 +176,7 @@ pre.Code { /* 代码 */
   border-radius: 5px;
   background-color: rgb(247, 246, 243);
   margin: 10px 0;
-  padding: 26px 16px; 
+  padding: 12px 16px; 
   overflow: auto;
 }
 
@@ -184,8 +184,8 @@ pre.Code code { /* 代码 */
   background-color: rgb(247, 246, 243);
   color: rgb(55, 53, 47);
   /* font-size: 0.9em; */
-  font-size: 0.85em;
-  line-height: 1.4;
+  font-size: 0.75em;
+  line-height: 1.5;
   padding: 0;
   word-wrap: break-word; /* 使得单词能够换行 */
   tab-size: 2;
@@ -627,7 +627,7 @@ pre.Code code { /* 代码 */
 }
 
 .Heading--2 .SemanticString { /* 标题2的语义字符串 */
-  font-size: 1.625rem;
+  font-size: 1.525rem;
   line-height: 1.538;
 }
 
@@ -636,7 +636,7 @@ pre.Code code { /* 代码 */
 }
 
 .Heading--3 .SemanticString {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 1.55;
 }
 
@@ -678,7 +678,7 @@ pre.Code code { /* 代码 */
 
 .Image--Normal, /* 图片--普通 */
 .Image--PageWidth {
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .Image--Normal { /* 图片--普通 */
@@ -860,7 +860,7 @@ pre.Code code { /* 代码 */
   line-height: 1.5;
   white-space: pre-wrap;
   word-break: break-word;
-  font-size: 0.9rem;
+  font-size: 12pt;
 }
 
 .SemanticString__Fragment--Link, /* 语义字符串的片段--链接 */
@@ -992,10 +992,19 @@ pre.Code code { /* 代码 */
 /* TableOfContents */
 
 .TableOfContents { /* 目录 */
+  box-sizing: border-box;
+  display: block;
+  border-left: 4px solid #66ccff;
+  position: fixed;
+  top: 5em;
+  left: 0;
   margin: 4px 0;
-  padding: 5px;
+  padding: 25px;
   border-radius: 5px;
   font-size: 0.875rem;
+  z-index: 1000; /* 确保它在其他元素之上 */
+  max-height: 90vh; /* 设置最大高度 */
+  overflow-y: auto; /* 当内容超出容器高度时，添加垂直滚动条 */
 }
 
 .TableOfContents__Item { /* 目录的项目 */
@@ -1019,6 +1028,11 @@ pre.Code code { /* 代码 */
 
 .TableOfContents__Item .SemanticStringArray { /* 目录的项目的语义字符串数组 */
   border-bottom: 1px solid rgba(55, 53, 47, 0.16);
+}
+
+.TableOfContents__Item > a.active {
+  font-weight: bold;
+  color: #66ccff;
 }
 
 /* Text */
