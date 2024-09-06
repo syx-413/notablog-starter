@@ -1,0 +1,65 @@
+/* up and down buttom */
+.Aside #up {
+    background-color: rgba(230, 165, 250, 0.3);
+    position: fixed;
+    right: 20px;
+    bottom: 85px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .Aside #up:hover {
+    background-color: rgb(160, 2, 252);
+  }
+  
+  .Aside #down {
+    background-color: rgba(129, 192, 242, 0.3);
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .Aside #down:hover {
+    background-color: rgb(45, 150, 233);
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .Aside #up {
+      right: 15px;
+      bottom: 65px;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+    }
+    .Aside #down {
+      right: 15px;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+    }
+  }@media only screen and (max-width: 900px) {
+    .Aside #up {
+      right: 15px;
+      bottom: 65px;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+    }
+    .Aside #down {
+      right: 15px;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+    }
+  }
