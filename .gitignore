@@ -27,3 +27,6 @@ cache/
 *.log
 pakage-lock.json
 pakage.json
+
+*.txt
+
