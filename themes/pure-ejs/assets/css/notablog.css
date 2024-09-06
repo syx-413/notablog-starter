@@ -76,8 +76,7 @@ body { /* Body */
 
 .Header,
 .PageRoot,
-.ArticleList
- { /* 头部，页面根，文章列表 */
+.ArticleList { /* 头部，页面根，文章列表 */
   /* width: 900px; */
   width: 970px;
   max-width: 100%;
@@ -85,14 +84,29 @@ body { /* Body */
   padding: 0px 96px; 
   margin-right:10%;
 }
+.utterances {
+  width: 900px;
+  max-width: 100%;
+  margin: 0px auto;
+  padding: 0px 96px;
+  height: 269px;
+}
+
+.utterances {
+  margin-top: 5rem;
+}
+
+.utterances-frame {
+  position: static;
+}
 
 
 /* For mobile devices */ /* 用于移动设备 */
 @media only screen and (max-width: 900px) {
   .Header,
   .PageRoot,
-  .ArticleList 
-  { /* 头部，页面根，文章列表 */
+  .ArticleList,
+  .utterances { /* 头部，页面根，文章列表 */
     max-width: 87.5%;
     padding-left: 0px;
     padding-right: 0px;
@@ -288,7 +302,7 @@ body { /* Body */
   align-items: center; /* 将页脚的子元素垂直居中 */
   justify-content: center; /* 将页脚的子元素水平居中 */
   font-size: 14px;
-  padding: 1rem 3rem; /* 将页脚的内边距设置为1rem 3rem */
+  padding: 5rem 3rem; /* 将页脚的内边距设置为1rem 3rem */
   color: rgba(55, 53, 47, 0.6);
 }
 
