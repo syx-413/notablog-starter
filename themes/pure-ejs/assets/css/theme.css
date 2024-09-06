@@ -1107,19 +1107,16 @@ pre.Code code {
   /* 目录 */
   box-sizing: border-box;
   display: block;
-  border-left: 4px solid #66ccff7b;
+  border-left: 1px solid #66ccff40;
   position: fixed;
   top: 55%;
   left: 0;
   margin: 4px 0;
   padding: 25px;
-  border-radius: 10px;
-  font-size: 0.875rem;
-  font-weight: bold;
+  /* border-radius: 10px; */
+  /* font-size: 2pt; */
   z-index: 1000;
-  /* 确保它在其他元素之上 */
   max-height: 90vh;
-  /* 设置最大高度 */
   overflow-y: auto;
   /* 当内容超出容器高度时，添加垂直滚动条 */
 }
@@ -1128,7 +1125,7 @@ pre.Code code {
   /* 目录的项目 */
   list-style-type: none;
   transition: background 120ms ease-in 0s;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .TableOfContents__Item:hover {
@@ -1154,7 +1151,7 @@ pre.Code code {
 
 /* 自定义滚动条样式 */
 .TableOfContents::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
   /* 滚动条宽度 */
 }
 
@@ -1176,8 +1173,6 @@ pre.Code code {
   background: #3399cc;
   /* 滚动条滑块悬停背景色 */
 }
-
-
 
 /* Text */
 
