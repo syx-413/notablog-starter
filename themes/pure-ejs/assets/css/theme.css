@@ -1109,14 +1109,15 @@ pre.Code code {
   display: block;
   border-left: 1px solid #66ccff40;
   position: fixed;
-  top: 55%;
+  top: 52%;
   left: 0;
   margin: 4px 0;
-  padding: 25px;
+  /* padding: 5px; */
+  padding-left: 20px;
   /* border-radius: 10px; */
   /* font-size: 2pt; */
   z-index: 1000;
-  max-height: 90vh;
+  max-height: 45vh;
   overflow-y: auto;
   /* 当内容超出容器高度时，添加垂直滚动条 */
 }
