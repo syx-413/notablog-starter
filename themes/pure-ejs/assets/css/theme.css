@@ -72,8 +72,9 @@ body {
 code {
   /* code元素 */
   /* Use monospace before Courier so font looks better on Android Chrome. */
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace,
-    Courier;
+  font-family: Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
+  /* font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace,
+    Courier; */
 }
 
 p {
@@ -214,7 +215,7 @@ pre.Code code {
   color: rgb(55, 53, 47);
   /* font-size: 0.9em; */
   font-size: 0.75em;
-  line-height: 1.5;
+  line-height: normal;
   padding: 0;
   word-wrap: break-word;
   /* 使得单词能够换行 */
@@ -686,6 +687,7 @@ pre.Code code {
   /* 标题 */
   margin-bottom: 1px;
   padding: 3px 2px;
+  scroll-margin-top: 80px; 
 }
 
 /* Font-related CSS should be applied on ".SemanticString". */
@@ -704,11 +706,13 @@ pre.Code code {
   /* 标题1的语义字符串 */
   font-size: 1.5rem;
   line-height: 1.515;
+  
 }
 
 .Heading--2 {
   /* 标题2 */
   margin-top: 1rem;
+  scroll-margin-top: 80px; 
 }
 
 .Heading--2 .SemanticString {
@@ -719,6 +723,7 @@ pre.Code code {
 
 .Heading--3 {
   margin-top: 0.5rem;
+  scroll-margin-top: 80px; 
 }
 
 .Heading--3 .SemanticString {
@@ -729,12 +734,14 @@ pre.Code code {
 .Heading--4 .SemanticString {
   font-size: 1rem;
   line-height: 1.563;
+  scroll-margin-top: 80px; 
 }
 
 .Heading--5 .SemanticString {
   font-size: 0.8125rem;
   line-height: 1.615;
   color: #888;
+  scroll-margin-top: 80px; 
 }
 
 .Column>.Heading:first-child {
@@ -1100,81 +1107,6 @@ pre.Code code {
 .SemanticString__Fragment--Date {
   color: var(--color-text-default-light);
 }
-
-/* TableOfContents */
-
-.TableOfContents {
-  /* 目录 */
-  box-sizing: border-box;
-  display: block;
-  border-left: 1px solid #66ccff40;
-  position: fixed;
-  top: 52%;
-  left: 0;
-  margin: 4px 0;
-  /* padding: 5px; */
-  padding-left: 20px;
-  /* border-radius: 10px; */
-  /* font-size: 2pt; */
-  z-index: 1000;
-  max-height: 45vh;
-  overflow-y: auto;
-  /* 当内容超出容器高度时，添加垂直滚动条 */
-}
-
-.TableOfContents__Item {
-  /* 目录的项目 */
-  list-style-type: none;
-  transition: background 120ms ease-in 0s;
-  /* border-radius: 5px; */
-}
-
-.TableOfContents__Item:hover {
-  /* 目录的项目的鼠标悬停效果 */
-  background: var(--color-ui-hover-bg);
-}
-
-.TableOfContents__Item>a {
-  /* 目录的项目的链接 */
-  color: inherit;
-  text-decoration: none;
-}
-
-.TableOfContents__Item>a>div {
-  /* 目录的项目的链接的div */
-  padding: 4.5px 2px;
-}
-
-.TableOfContents__Item .SemanticStringArray {
-  /* 目录的项目的语义字符串数组 */
-  border-bottom: 1px solid rgba(55, 53, 47, 0.16);
-}
-
-/* 自定义滚动条样式 */
-.TableOfContents::-webkit-scrollbar {
-  width: 4px;
-  /* 滚动条宽度 */
-}
-
-.TableOfContents::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  /* 滚动条轨道背景色 */
-  border-radius: 5px;
-  /* 滚动条轨道圆角 */
-}
-
-.TableOfContents::-webkit-scrollbar-thumb {
-  background: #66ccff;
-  /* 滚动条滑块背景色 */
-  border-radius: 5px;
-  /* 滚动条滑块圆角 */
-}
-
-.TableOfContents::-webkit-scrollbar-thumb:hover {
-  background: #3399cc;
-  /* 滚动条滑块悬停背景色 */
-}
-
 /* Text */
 
 .Text {

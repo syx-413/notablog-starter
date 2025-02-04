@@ -1,65 +1,142 @@
 /* up and down buttom */
 .Aside #up {
-    background-color: rgba(230, 165, 250, 0.3);
-    position: fixed;
-    right: 20px;
-    bottom: 85px;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    color: #fff;
-    border-radius: 50%;
-    cursor: pointer;
+  background-color: rgba(230, 165, 250, 0.3);
+  position: fixed;
+  right: 20px;
+  bottom: 85px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Aside #up:hover {
+  background-color: rgb(160, 2, 252);
+}
+
+.Aside #down {
+  background-color: rgba(129, 192, 242, 0.3);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.Aside #down:hover {
+  background-color: rgb(45, 150, 233);
+}
+
+@media only screen and (max-width: 900px) {
+  .Aside #up {
+    right: 15px;
+    bottom: 65px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
   }
-  
-  .Aside #up:hover {
-    background-color: rgb(160, 2, 252);
-  }
-  
   .Aside #down {
-    background-color: rgba(129, 192, 242, 0.3);
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    color: #fff;
-    border-radius: 50%;
-    cursor: pointer;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
   }
-  .Aside #down:hover {
-    background-color: rgb(45, 150, 233);
+}@media only screen and (max-width: 900px) {
+  .Aside #up {
+    right: 15px;
+    bottom: 65px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
   }
-  
-  @media only screen and (max-width: 900px) {
-    .Aside #up {
-      right: 15px;
-      bottom: 65px;
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-    }
-    .Aside #down {
-      right: 15px;
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-    }
-  }@media only screen and (max-width: 900px) {
-    .Aside #up {
-      right: 15px;
-      bottom: 65px;
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-    }
-    .Aside #down {
-      right: 15px;
-      width: 25px;
-      height: 25px;
-      line-height: 25px;
-    }
+  .Aside #down {
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
   }
+}
+
+
+
+/* TableOfContents */
+
+.TableOfContents {
+/* 目录 */
+box-sizing: border-box;
+display: block;
+border-left: 1px solid #66ccff40;
+position: fixed;
+top: 52%;
+left: 0;
+margin: 4px 0;
+padding-left: 20px;
+border-radius: 4px;
+font-size: 13pt;
+z-index: 1000;
+max-height: 45vh;
+overflow-y: auto;
+/* 当内容超出容器高度时，添加垂直滚动条 */
+}
+
+.TableOfContents__Item {
+/* 目录的项目 */
+list-style-type: none;
+transition: opacity .2s cubic-bezier(.3,0,.5,1);
+/* border-radius: 5px; */
+}
+
+.TableOfContents__Item:hover {
+/* 目录的项目的鼠标悬停效果 */
+background: var(--color-ui-hover-bg);
+}
+
+.TableOfContents__Item>a {
+/* 目录的项目的链接 */
+color: inherit;
+text-decoration: none;
+}
+.TableOfContents__Item>a>div {
+/* 目录的项目的链接的div */
+padding: 4.5px 2px;
+}
+
+.TableOfContents__Item .SemanticStringArray {
+/* 目录的项目的语义字符串数组 */
+border-bottom: 1px solid rgba(55, 53, 47, 0.16);
+}
+
+/* 自定义滚动条样式 */
+.TableOfContents::-webkit-scrollbar {
+width: 4px;
+/* 滚动条宽度 */
+}
+
+.TableOfContents::-webkit-scrollbar-track {
+background: #f0f0f0;
+/* 滚动条轨道背景色 */
+border-radius: 5px;
+/* 滚动条轨道圆角 */
+}
+
+.TableOfContents::-webkit-scrollbar-thumb {
+background: #66ccff;
+/* 滚动条滑块背景色 */
+border-radius: 5px;
+/* 滚动条滑块圆角 */
+}
+
+.TableOfContents::-webkit-scrollbar-thumb:hover {
+background: #3399cc;
+/* 滚动条滑块悬停背景色 */
+}
+
+
+/* Copy */

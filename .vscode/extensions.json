@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "github.copilot-labs"
+        "github.copilot-labs",
+        "github.vscode-github-actions"
     ]
 }

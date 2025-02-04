@@ -1,0 +1,30 @@
+name: Github Pages
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # update cron time
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4    
+        with:
+          node-version: latest
+
+      - name: Install Dependencies
+        run: npm i -g notablog && notablog generate .
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository-name: syx-413/syx-413.github.io # 修改这里
+          branch: main  # 如果你的仓库默认分支是 master 记得修改这里                    
+          FOLDER: public

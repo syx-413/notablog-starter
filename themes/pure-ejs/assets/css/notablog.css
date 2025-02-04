@@ -151,13 +151,14 @@ body { /* Body */
 }
 
 .Header__Title { /* 头部的标题 */
-  /* margin-top: 2.5rem; */
-  margin-top: 1.5rem;
+  margin-top: -1 rem;
   margin-bottom: 0.25em;
   line-height: 1.2;
-  font-size: 1.7rem;
-  font-weight: 700;
+  text-align: left;
+  font-size: 2.5em;
   letter-spacing: -0.005em;
+  background-color: rgba(255, 255, 255, 0.55); /* 设置背景颜色为半透明灰色 */
+  border-radius: 15px
 }
 
 .Header > *:last-child { /* 头部的最后一个子元素 */
