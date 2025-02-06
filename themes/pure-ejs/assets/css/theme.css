@@ -101,7 +101,7 @@ p {
   /* 音频 */
   display: block;
   pointer-events: auto;
-  width: 100%;
+  width: 75%;
   position: relative;
 }
 
