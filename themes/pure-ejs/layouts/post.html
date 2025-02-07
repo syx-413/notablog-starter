@@ -51,19 +51,20 @@
   </header>
     <div id="content-html"></div>
   <%- post.contentHTML %>
-    <aside class="Aside">
-        <a href="#content-html"><div id="up">👆</div></a>
-        <a href="#message-board"><div id="down">👇</div></a>
+    <aside class="UDAside">
+        <a href="#content-html"><div id="up">⬆️</div></a>
+        <a href="#message-board"><div id="down">⬇️</div></a>
     </aside>
     <div id="message-board"></div>
-    <script src="https://utteranc.es/client.js"
-        repo="syx-413/syx-413.github.io"
-        issue-term="pathname"
-        theme="boxy-light"
-        crossorigin="anonymous"
-        async>
-    </script>
-    
+    <aside class ="utterances">
+      <script src="https://utteranc.es/client.js"
+      repo="syx-413/syx-413.github.io"
+      issue-term="pathname"
+      theme="boxy-light"
+      crossorigin="anonymous"
+      async>
+  </script>
+  </aside>
   <%- include('partials/footer.html', { siteMeta }) %>
 </body>
 

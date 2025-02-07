@@ -84,22 +84,6 @@ body { /* Body */
   padding: 0px 96px; 
   margin-right:10%;
 }
-.utterances {
-  width: 900px;
-  max-width: 100%;
-  margin: 0px auto;
-  padding: 0px 96px;
-  height: 269px;
-}
-
-.utterances {
-  margin-top: 5rem;
-}
-
-.utterances-frame {
-  position: static;
-}
-
 
 /* For mobile devices */ /* 用于移动设备 */
 @media only screen and (max-width: 900px) {
