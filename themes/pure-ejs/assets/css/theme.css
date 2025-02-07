@@ -72,10 +72,12 @@ body {
 code {
   /* code元素 */
   /* Use monospace before Courier so font looks better on Android Chrome. */
-  font-family: Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
-  /* font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace,
-    Courier; */
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  -webkit-user-select: all;
+  user-select: all;
+  /* font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace, Courier; */
 }
+
 
 p {
   /* p元素 */
@@ -584,7 +586,8 @@ pre.Code code {
   border-bottom: 1px solid rgba(55, 53, 47, 0.16);
 }
 
-.Divider2 { /* 这里 */
+.Divider2 {
+  /* 这里 */
   width: 100%;
   height: calc(1.5rem + 10px);
   color: #1f2225;
@@ -687,7 +690,7 @@ pre.Code code {
   /* 标题 */
   margin-bottom: 1px;
   padding: 3px 2px;
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
 /* Font-related CSS should be applied on ".SemanticString". */
@@ -706,13 +709,13 @@ pre.Code code {
   /* 标题1的语义字符串 */
   font-size: 1.5rem;
   line-height: 1.515;
-  
+
 }
 
 .Heading--2 {
   /* 标题2 */
   margin-top: 1rem;
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
 .Heading--2 .SemanticString {
@@ -723,7 +726,7 @@ pre.Code code {
 
 .Heading--3 {
   margin-top: 0.5rem;
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
 .Heading--3 .SemanticString {
@@ -734,14 +737,14 @@ pre.Code code {
 .Heading--4 .SemanticString {
   font-size: 1rem;
   line-height: 1.563;
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
 .Heading--5 .SemanticString {
   font-size: 0.8125rem;
   line-height: 1.615;
   color: #888;
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
 
 .Column>.Heading:first-child {
@@ -1107,6 +1110,7 @@ pre.Code code {
 .SemanticString__Fragment--Date {
   color: var(--color-text-default-light);
 }
+
 /* Text */
 
 .Text {
@@ -1145,7 +1149,7 @@ pre.Code code {
   margin-left: 2px;
   margin-right: 4px;
   flex-shrink: 0;
- 
+
 }
 
 .ToDo__Title--done {
