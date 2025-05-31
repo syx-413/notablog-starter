@@ -27,5 +27,5 @@ jobs:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository-name: syx-413/syx-413.github.io # 修改这里
           branch: main  # 如果你的仓库默认分支是 master 记得修改这里                    
-          # FOLDER: public 
+          FOLDER: public 
           # target-folder: src
