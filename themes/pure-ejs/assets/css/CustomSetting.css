@@ -1,73 +1,55 @@
-/* up and down buttom */
-.UDAside #up {
-  background-color: rgba(230, 165, 250, 0.3);
+/* ====== 上下按钮改进版 ====== */
+.UDAside #up,
+.UDAside #down {
   position: fixed;
   right: 20px;
-  bottom: 85px;
+  z-index: 999; /* 保证在最上层 */
   text-align: center;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  color: #fff;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
   border-radius: 50%;
   cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px); /* 毛玻璃质感 */
+}
+/* 向上按钮 */
+.UDAside #up {
+  bottom: 90px;
+  background: linear-gradient(135deg, rgba(230, 165, 250, 0.6), rgba(180, 80, 255, 0.6));
+  color: white;
 }
 
 .UDAside #up:hover {
-  background-color: rgb(160, 2, 252);
+  background: linear-gradient(135deg, rgb(160, 2, 252), rgb(110, 0, 190));
+  transform: translateY(-3px) scale(1.05); /* 悬停轻微弹起 */
 }
-
+/* 向下按钮 */
 .UDAside #down {
-  background-color: rgba(129, 192, 242, 0.3);
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
+  bottom: 25px;
+  background: linear-gradient(135deg, rgba(129, 192, 242, 0.6), rgba(45, 150, 233, 0.6));
+  color: white;
 }
 
 .UDAside #down:hover {
-  background-color: rgb(45, 150, 233);
+  background: linear-gradient(135deg, rgb(45, 150, 233), rgb(0, 100, 180));
+  transform: translateY(3px) scale(1.05); /* 悬停轻微下移 */
 }
-
+/* 手机端适配 */
 @media only screen and (max-width: 900px) {
-  .UDAside #up {
-    right: 15px;
-    bottom: 65px;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-  }
-
+  .UDAside #up,
   .UDAside #down {
     right: 15px;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
   }
+  .UDAside #up { bottom: 70px; }
 }
 
-@media only screen and (max-width: 900px) {
-  .UDAside #up {
-    right: 15px;
-    bottom: 65px;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-  }
-
-  .UDAside #down {
-    right: 15px;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-  }
-}
 
 /* .notion-aside-table-of-contents {
   display: flex;
@@ -100,79 +82,90 @@
   align-items: center;
 }
 
-/* TableOfContents */
 
+/* === 左侧浮动 Table of Contents 样式（渐变 + 圆角卡片）=== */
 .TableOfContents {
-
-  display: flow-root list-item;
   position: fixed;
-
-  top: 52%;
-  left: 0;
-  margin: 4px 0;
-  padding-left: 20px;
-  border-radius: 4px;
+  top: 100px;
+  left: 10px; /* 左侧位置 */
+  width: 260px;
+  background: linear-gradient(to bottom, #fffbe6, #ffffff); /* 柔和浅黄到白渐变 */
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 15px;
+  font-size: 0.9rem; /* 调大字体方便阅读 */
+  line-height: 1.8;
   z-index: 1000;
-  max-height: 45vh;
+  max-height: 70vh;
   overflow-y: auto;
-
 }
 
+/* 目录标题 */
+.TableOfContents__Header {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #444;
+}
+.TableOfContents__Header::before,
+.TableOfContents__Header::after {
+  content: " ✦ ";
+  color: #d4a373; /* 点缀符号颜色，可改 */
+}
+
+/* 每个目录条目 */
 .TableOfContents__Item {
-  /* 目录的项目 */
-  list-style-type: none;
-  user-select: none;
-  transition: background 20ms ease-in 0s;
+  list-style: none;
   cursor: pointer;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  transition: all 0.2s ease;
 }
-
-
 .TableOfContents__Item:hover {
-  background: var(--color-ui-hover-bg);
-  border-radius: 4px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 6px;
 }
-
-.TableOfContents__Item>a {
+.TableOfContents__Item > a {
   color: inherit;
   text-decoration: none;
+  display: block;
+  padding: 4px 2px;
 }
 
-.TableOfContents__Item>a>div {
-  padding: 4.5px 2px;
+/* 层级缩进 */
+.TableOfContents__Item[data-level="1"] { font-weight: bold; }
+.TableOfContents__Item[data-level="2"] { padding-left: 15px; font-size: 0.9em; }
+.TableOfContents__Item[data-level="3"] { padding-left: 30px; font-size: 0.85em; }
+
+/* 当前阅读位置高亮（左侧标记线） */
+.TableOfContents__Item.active > a {
+  color: #d4a373; /* 同渐变的暖色系 */
+  font-weight: bold;
+  border-left: 3px solid #d4a373;
+  padding-left: 5px;
 }
 
-.TableOfContents__Item .SemanticStringArray {
-  border-bottom: 1px solid rgba(55, 53, 47, 0.16);
-}
-
-.TableOfContents__Item .SemanticStringArray :active {
-  color: var(--select-color-0) !important;
-  /* transition: color 1s;` */
-  /* background: rgba(55, 53, 47, 0.16); */
-}
-
-/* 自定义滚动条样式 */
-.TableOfContents::-webkit-scrollbar {
-  width: 4px;
-}
-
+/* 滚动条美化 */
+.TableOfContents::-webkit-scrollbar { width: 6px; }
 .TableOfContents::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  border-radius: 5px;
+  background: transparent;
+  border-radius: 4px;
 }
-
 .TableOfContents::-webkit-scrollbar-thumb {
-  background: #66ccff;
-  border-radius: 5px;
+  background: #d4a373;
+  border-radius: 4px;
+}
+.TableOfContents::-webkit-scrollbar-thumb:hover {
+  background: #b37d4e;
 }
 
-.TableOfContents::-webkit-scrollbar-thumb:hover {
-  background: #3399cc;
+/* 移动端隐藏 */
+@media (max-width: 900px) {
+  .TableOfContents {
+    display: none;
+  }
 }
+
 
 .utterances {
   width: 85%;
