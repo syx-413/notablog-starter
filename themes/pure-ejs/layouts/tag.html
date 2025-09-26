@@ -1,27 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
   <base href="../">
   <%- include('partials/head.html', { fontSize: 20, favicon: siteMeta.iconUrl }) %>
-  <title>#<%= tagName %> | <%= siteMeta.title %>
-  </title>
+  <title>#<%= tagName %> | <%= siteMeta.title %></title>
   <meta property="og:type" content="blog">
   <meta property="og:title" content="#<%= tagName %> | <%= siteMeta.title %>">
   <meta name="description" content="Posts with tag #<%= tagName %>">
   <meta property="og:description" content="Posts with tag #<%= tagName %>">
-</head>
 
+  <style>
+    body {
+      background: #fafafa;
+    }
+
+    /* 顶部标签信息 */
+    .TagHeader {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: white;   /* 去掉渐变，改成纯白或透明 */
+      color: #333;
+      border-radius: 8px;
+      margin: 1rem auto;
+      max-width: 900px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 轻微阴影增加层次感 */
+    }
+    .TagHeader h1 {
+      font-size: 2rem;
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .TagHeader h1::before {
+      content: "🏷️";
+      font-size: 1.5rem;
+    }
+
+    /* 卡片列表 */
+    .TagArticleList {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .TagArticleCard {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: all 0.25s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .TagArticleCard:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .TagArticleCard__Cover img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .TagArticleCard__Content {
+      padding: 1rem;
+      flex: 1;
+    }
+    .TagArticleCard__Title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .TagArticleCard__Title a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .TagArticleCard__Meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .TagArticleCard__Description {
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .TagHeader h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
 <body>
   <%- include('partials/navbar.html', { siteMeta }) %>
-  <header class="Header">
-    <div class="Header__Spacer--NoCover"></div>
-    <h1 class="Header__Title">#<%= tagName %>
-    </h1>
-  </header>
-  <%- include('partials/articleList.html', { pages: pages.filter(page=> page.publish)
-      }) %>
+
+  <!-- 标签标题 (纯白底) -->
+  <div class="TagHeader">
+    <h1>#<%= tagName %></h1>
+  </div>
+
+  <!-- 卡片式文章列表 -->
+  <div class="TagArticleList">
+    <% pages.filter(page => page.publish).forEach(function(page) { %>
+      <article class="TagArticleCard">
+        <% if (page.cover) { %>
+          <div class="TagArticleCard__Cover">
+            <a href="<%= page.url %>">
+              <img src="<%= page.cover %>" alt="<%= page.title %>">
+            </a>
+          </div>
+        <% } %>
+        <div class="TagArticleCard__Content">
+          <div class="TagArticleCard__Title">
+            <a href="<%= page.url %>"><%= page.title %></a>
+          </div>
+          <div class="TagArticleCard__Meta">
+             <%= page.dateString %>
+          </div>
+          <% if (page.descriptionPlain) { %>
+            <div class="TagArticleCard__Description"><%= page.descriptionPlain %></div>
+          <% } %>
+        </div>
+      </article>
+    <% }) %>
+  </div>
+
   <%- include('partials/footer.html', { siteMeta }) %>
 </body>
-
 </html>
